@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grade system</title>
+
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background:url(background.png) no-repeat;
+            background-size: cover;
+        }
+        #numericGrade{
+            width: 400px;
+            height: 30px;
+            margin-top: 70px;
+            margin-left: 20%;
+            border-radius: 10px;
+            box-shadow: 4p 0 2x rgba(0,0,0,0,150);
+            transition: all 300ms ease;
+            
+
+        }
+        #numericGrade:hover{
+            background: pink;
+
+        }
+        button{
+            width: 100px;
+            height: 30px;
+            border-radius: 10px;
+            box-shadow: 4p 0 2x rgba(0,0,0,0,150);
+            transition: all 300ms ease;
+            flex-wrap: wrap;
+        }
+    </style>
+</head>
+<body>
+    <input id="numericGrade" />
+    <button onclick="convert()">Convert</button>
+    <p id="result"></p>
+    <script>
+
+        const numericGrade = document.getElementById(
+            'numericGrade'
+        );
+
+        const gradeDisplay = document.getElementById(
+            'gradeDisplay'
+        );
+
+        function convert() {
+            const numeric = parseInt(numericGrade.value);
+
+            let grade;
+            if (numeric >= 90) {
+                grade = 'A';
+            } else if (numeric >= 80) {
+                grade = 'B';
+            } else if (numeric >= 70) {
+                grade = 'C';
+            } else if (numeric >= 60) {
+                grade = 'D';
+            } else {
+                grade = 'F';
+            }
+            console.log(grade);
+          
+            document.getElementById('result').textContent = 'Grade: ' + grade;
+        }
+
+    </script>
+</body>
+</html>
